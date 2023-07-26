@@ -2,7 +2,7 @@
 #exporta en formato de tabla, el objetivo es facilitar la extracciíon de
 #datos estadísticos de los archivos .inv 
 
-
+#ESTE ES UN COMENTARIO
 import pandas as pd
 
 """# TODO EL TEXTO SE GUARDA EN UN ÚNICO ARREGLO
