@@ -30,6 +30,7 @@ t2='Model inversion constraint'
 t3='Error Distribution'
 t4='Iteration  Time for this iteration  Total Time   Abs. Error'
 t5='RES2DINV ver. 3.55.32 - ID. No. : K3-C8FAC8FA-C8FA'
+t6='ITERATION 1'
 
 
 for linea in archivo:
@@ -42,16 +43,17 @@ for linea in archivo:
 
 	if (linea == t2):
 		lineat2=numlin+1
-
+	#BUSCANDO ERROR MEDIO
 	if (linea == t3):
-		lineat3=numlin+1
+		lineat3= numlin - 3 #SE EXTRAE EL RENGLÓN CON LA INFORMACIÓN DE ERROR MEDIO
 
-	if (linea == t4):
-		lineat3=numlin+1
+	#if (linea == t4):
+	#	lineat3=numlin+1
 
-	if (linea == t5):
-		lineat4=numlin-1
+	#if (linea == t5):
+	#	lineat4=numlin-1
 	numlin=numlin+1
+	
 	
 
 print('TERMINA LECTURA DEL ARCHIVO')
@@ -59,6 +61,16 @@ print('TERMINA LECTURA DEL ARCHIVO')
 #Resultados encontrados
 resultadosInv=texto[lineat1:lineat1+6]
 print(resultadosInv)
+print(type(resultadosInv))
+
+#SE CREA EL DATAFRAME QUE CONTIENE PARTE DE LA INFORMACIÓN DE "DATOS DE SALIDA INVERSIÓN" 
+df1=pd.DataFrame(resultadosInv)
+print(df1)
+
+print(texto[lineat3])
+
+
+
 
 #dfResultados = pd.DataFrame(resultadosInv) # Comvertimos la lista en un DataFrame
 
