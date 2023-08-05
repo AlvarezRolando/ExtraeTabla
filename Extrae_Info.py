@@ -52,6 +52,9 @@ for linea in archivo:
 
 	#if (linea == t5):
 	#	lineat4=numlin-1
+	if (linea == t6):
+		lineat6=numlin +3
+
 	numlin=numlin+1
 	
 	
@@ -59,28 +62,27 @@ for linea in archivo:
 print('TERMINA LECTURA DEL ARCHIVO')
 
 #Resultados encontrados
-resultadosInv=texto[lineat1:lineat1+6]
-print(resultadosInv)
-print(type(resultadosInv))
+resultadosInv=texto[lineat1:lineat1+6] 
+errorMedio=texto[lineat3]
+
+numNiveles=texto[lineat6]
+numNiveles=numNiveles.split(",") #Separa la cadena dado un delimitador. -> resulta en un arreglo de cadenas
+
+print("RESULTAOS DE INVERSIÓN")
+#print(resultadosInv)
+#print(type(resultadosInv))
 
 #SE CREA EL DATAFRAME QUE CONTIENE PARTE DE LA INFORMACIÓN DE "DATOS DE SALIDA INVERSIÓN" 
-df1=pd.DataFrame(resultadosInv)
-print(df1)
-
-print(texto[lineat3])
-
-
-
+dInverResults=pd.DataFrame(resultadosInv) # Comvertimos la lista en un DataFrame
 
 #dfResultados = pd.DataFrame(resultadosInv) # Comvertimos la lista en un DataFrame
 
 #Resumen de parámetros de inversión
 #resumen=texto[inicResumen:finResumen]
 
-
 #Resumen de iteraciones
 #tablaIteraciones=texto[inicTabla-1:finTabla]
 
-
-#print(dfResultados)
-
+print(dInverResults)
+print (numNiveles)
+print(type(numNiveles))
